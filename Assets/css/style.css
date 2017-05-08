@@ -1,9 +1,38 @@
+body {
+	overflow-y: hidden;
+}
+#title {
+	background-color: none;
+	font-size: 50px;
+	text-align: center;
+	color: #fff;
+	padding-bottom: 10px;
+}
+.glyphicon-menu-hamburger {
+	color: #fff;
+	font-size: 20px;
+}
+nav {
+	background: none;
+	margin-top: -9px;
+}
+nav a {
+	color: #fff;
+}
+nav a:hover {
+	color: #8e44ad;
+	transition-duration: 0.5s;
+}
+nav a:focus {
+	color: #8e44ad;
+}
+
 #paint {
 	border-radius: 20px;
 	margin: 50px;
+	margin-top: -5px;
 	cursor: url("../icon/pencil.png"), default;
 	background-color: #fff;
-	border:1px solid #000;
 }
 .color {
 	font-weight: bold;
@@ -40,9 +69,23 @@ input:hover {
 	border:2px solid #F2F1EF;
 }
 #valueText {
-	background-color: blue;
+	background-color: #8e44ad;
+	text-align: center;
+	color: #fff;
+}
+#valuewidth {
+	background-color: #8e44ad;
+	text-align: center;
+	color: #fff;
+}
+#valueShadow {
+	background-color: #8e44ad;
+	text-align: center;
+	color: #fff;
 }
 #font {
+	background: none;
+	color: #fff;
 	margin: 6px;
 	padding: 8px 8px 8px 8px;
 	border:none;
@@ -52,4 +95,42 @@ input:hover {
 }
 #reset {
 	font-size: 20px;
+}
+#picture {
+	display: none;
+}
+#picturePaint {
+	margin: 8px;
+	height: 35px;
+	border:2px solid #F2F1EF;
+}
+#widthpicture {
+	background:none;
+	color: #fff;
+	margin: 6px;
+	padding: 8px 8px 8px 8px;
+	border:none;
+}
+#heightpicture {
+	background:none;
+	color: #fff;
+	margin: 6px;
+	padding: 8px 8px 8px 8px;
+	border:none;
+}
+.background-wrap {
+  position: fixed;
+  z-index: -1000;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+#video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
 }

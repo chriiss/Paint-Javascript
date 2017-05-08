@@ -10,9 +10,9 @@ $(function () {
     backgroundrectangle = [];
     videcircle = [];
     backgroundcircle = [];
+    resize = [];
     departClique = false;
     departMove = false;
-    browser = navigator.userAgent;
     $('#contourcolor').change(function () {
         contourcolor = $('#contourcolor').val();
     });
@@ -37,6 +37,13 @@ $(function () {
         sizeText = $('#textSize').val() + "px";
         $('#valueText').html(sizeText);
     });
+    $('#ajouter').click(function () {
+        type = 'image';
+        image = $('#picturePaint').val();
+        picture = new Image($('#widthpicture').val(), $('#heightpicture').val());
+        picture.src = image;
+        $('#picture').html(picture);
+    });
     $('#textValidator').click(function () {
         type = 'text';
     });
@@ -60,6 +67,9 @@ $(function () {
     });
     $('#rubber').click(function () {
         type = 'rubber';
+    });
+    $('#resize').click(function () {
+        type = 'resize';
     });
     $('#reset').click(function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -168,6 +178,12 @@ $(function () {
         }
         if (backgroundcircle.length >= 3) {
             backgroundcircle = [];
+        }
+        if (type === 'image') {
+            ctx.beginPath();
+            ctx.shadowBlur = shadow;
+            ctx.shadowColor = shadowcolor;
+            ctx.drawImage(document.getElementById('picture').children[0], e.pageX - pos.left, e.pageY - pos.top, $('#widthpicture').val(), $('#heightpicture').val());
         }
         if (type === 'text') {
             styleText = sizeText + " " + font;

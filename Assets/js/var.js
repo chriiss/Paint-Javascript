@@ -22,6 +22,6 @@ var picture;
 var sizeText;
 var font;
 var styleText;
+var resize;
 var canvasPaint;
 var urlPaint;
-var browser;

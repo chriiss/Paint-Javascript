@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-default">
+    <p id="title">Painting.dev</p>
+    <div class="background-wrap">
+        <video autoplay loop id="video-background" muted>
+            <source src="Assets/video/video4k.mp4" type="video/mp4">
+        </video>
+    </div>
+    <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+           <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
-          <a class="navbar-brand" href="#">Painting</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -65,7 +67,7 @@
                         <li class="color">taille du texte</li>
                         <li><div id="valueText"></div></li>
                         <li><input type="range" name="textSize" id="textSize" value="8" min="8" max="72"></li>
-                        <li><input type="submit" class="btn btn-success" name="textValidator" value="Ajouter le text" id="textValidator"></li>
+                        <li><input type="submit" class="btn btn-success" name="textValidator" value="Ajouter" id="textValidator"></li>
                     </ul>
                 </li>
             </ul>
@@ -78,6 +80,34 @@
                     });
                 </script>
             </select>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Image <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><input type="text" name="picturePaint" id="picturePaint" placeholder="url de l'image"></li>
+                      <input type="submit" class="btn btn-success" name="valider" id="ajouter" value="Ajouter">
+                    </ul>
+                </li>
+            </ul>
+            
+            <select name="widthpicture" id="widthpicture">
+                <option disabled selected>Largeur image</option>
+                <script>
+                    x = [50,100,150,200,250,300,350,400,450,500,550,600,700,800,900,1000];
+                    x.forEach(function(value){
+                        document.write("<option>" + value + "</option>");
+                    });
+                </script>
+            </select>
+            <select name="heightpicture" id="heightpicture">
+                <option disabled selected>Hauteur image</option>
+                <script>
+                    y = [50,100,150,200,250,300,350,400,450,500,550,600,700,800,900,1000];
+                    y.forEach(function(value){
+                        document.write("<option>" + value + "</option>");
+                    });
+                </script>
+            </select>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#" id="reset"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
                 <li><a href="#" id="save"><i class="fa fa-floppy-o" aria-hidden="true"></i></a></li> 
@@ -85,12 +115,11 @@
         </div>
       </div>
     </nav>
-
-<canvas id="paint" width="1250" height="850"></canvas>
+<canvas id="paint" width="1400" height="550"></canvas>
+<div id="picture"></div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="Assets/js/var.js"></script>
 <script type="text/javascript" src="Assets/js/paint.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
