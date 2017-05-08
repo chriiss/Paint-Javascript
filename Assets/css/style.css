@@ -1,0 +1,55 @@
+#paint {
+	border-radius: 20px;
+	margin: 50px;
+	cursor: url("../icon/pencil.png"), default;
+	background-color: #fff;
+	border:1px solid #000;
+}
+.color {
+	font-weight: bold;
+	text-align: center;
+}
+input:hover {
+	border:1px solid #663399;
+	transition-duration: 0.5s;
+}
+#pencil {
+	font-size: 20px;
+}
+#rubber {
+	font-size: 20px;
+}
+#videcircle {
+	font-size: 21px;
+}
+#backgroundcircle {
+	font-size: 20px;
+}
+#viderectangle {
+	font-size: 21px;
+}
+#backgroundrectangle {
+	font-size: 20px;
+}
+#trait {
+	font-size: 20px;
+}
+#text {
+	margin: 8px;
+	height: 35px;
+	border:2px solid #F2F1EF;
+}
+#valueText {
+	background-color: blue;
+}
+#font {
+	margin: 6px;
+	padding: 8px 8px 8px 8px;
+	border:none;
+}
+#save {
+	font-size: 20px;
+}
+#reset {
+	font-size: 20px;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>painting</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Painting</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                    <li><a href="#" id="pencil"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+                    <li><a href="#" id="rubber"><i class="fa fa-eraser" aria-hidden="true"></i></a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="#" id="viderectangle"><i class="fa fa-square-o" aria-hidden="true"></i></a></li>
+                <li><a href="#" id="backgroundrectangle"><i class="fa fa-square" aria-hidden="true"></i></a>
+                <li><a href="#" id="trait"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
+                <li><a href="#" id="videcircle"><i class="fa fa-circle-o" aria-hidden="true"></i></a></li>
+                <li><a href="#" id="backgroundcircle"><i class="fa fa-circle" aria-hidden="true"></i></a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Couleurs <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="color">Contour</li>
+                        <li><input type="color" class="form-control" name="contourcolor" id="contourcolor"></li>
+                        <li class="color">Fond</li>
+                        <li><input type="color" class="form-control" name="backgroundcolor" id="backgroundcolor"></li>
+                        <li class="color">Ombre</li>
+                        <li><input type="color" class="form-control" name="shadowcolor" id="shadowcolor"></li>
+                 </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Taille <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="color">largeur</li>
+                        <li><div id="valuewidth"></div></li>
+                        <li><input type="range" name="width" id="width" value="1" min="1" max="50"></li>
+                        <li class="color">largeur de l'ombre</li>
+                        <li><div id="valueShadow"></div></li>
+                        <li><input type="range" name="shadow" id="shadow" value="0" min="0" max="50"></li> 
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Texte <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><input type="text" name="text" id="text" placeholder="Ajouter un texte"></li>
+                        <li class="color">taille du texte</li>
+                        <li><div id="valueText"></div></li>
+                        <li><input type="range" name="textSize" id="textSize" value="8" min="8" max="72"></li>
+                        <li><input type="submit" class="btn btn-success" name="textValidator" value="Ajouter le text" id="textValidator"></li>
+                    </ul>
+                </li>
+            </ul>
+            <select id="font">
+                <option disabled selected>Police texte</option>
+                <script>
+                    policetext = ['Times New Roman','Arial','Arial Black','Georgia','Comic Sans MS','Helvetica','Verdana','Times','Tahoma','Magneto','Calibri','Consolas','Courier','Garamond','Impact','Segoe Print','Segoe Script','Segoe Ui','Segoe Ui Black','Trebuchet MS', 'Verdana'];
+                    policetext.forEach(function(value){
+                        document.write("<option>" + value + "</option>");
+                    });
+                </script>
+            </select>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" id="reset"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
+                <li><a href="#" id="save"><i class="fa fa-floppy-o" aria-hidden="true"></i></a></li> 
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+<canvas id="paint" width="1250" height="850"></canvas>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="Assets/js/var.js"></script>
+<script type="text/javascript" src="Assets/js/paint.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

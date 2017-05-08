@@ -1,0 +1,27 @@
+"use-strict";
+
+var canvas; 
+var ctx;
+var contourcolor;
+var backgroundcolor;
+var shadowcolor; 
+var width; 
+var shadow;
+var pos; 
+var type; 
+var trait; 
+var viderectangle; 
+var backgroundrectangle; 
+var videcircle; 
+var backgroundcircle; 
+var url; 
+var departClique;
+var departMove;
+var image;
+var picture;
+var sizeText;
+var font;
+var styleText;
+var canvasPaint;
+var urlPaint;
+var browser;
