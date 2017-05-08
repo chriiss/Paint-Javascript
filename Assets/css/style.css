@@ -8,6 +8,12 @@ body {
 	color: #fff;
 	padding-bottom: 10px;
 }
+.fa-paint-brush {
+	color: #8e44ad;
+}
+.fa-pencil-square-o {
+	color: #3498db;
+}
 .glyphicon-menu-hamburger {
 	color: #fff;
 	font-size: 20px;
