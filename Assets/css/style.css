@@ -1,5 +1,5 @@
 body {
-	overflow-y: hidden;
+	overflow-x: hidden;
 }
 #title {
 	background-color: none;
@@ -34,8 +34,6 @@ nav a:focus {
 }
 
 #paint {
-	border-radius: 20px;
-	margin: 50px;
 	margin-top: -5px;
 	cursor: url("../icon/pencil.png"), default;
 	background-color: #fff;
@@ -139,4 +137,8 @@ input:hover {
   left: 0;
   min-height: 100%;
   min-width: 100%;
+}
+#copyright {
+	color: #fff;
+	text-align: center;
 }
