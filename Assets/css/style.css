@@ -42,8 +42,11 @@ nav a:focus {
 	font-weight: bold;
 	text-align: center;
 }
+input[type="color"] {
+	border:1px solid #fff;
+}
 input:hover {
-	border:1px solid #663399;
+	border:2px solid #DADFE1;
 	transition-duration: 0.5s;
 }
 #pencil {

@@ -1,96 +1,5 @@
-$(function () {
-    contourcolor = document.getElementById('contourcolor').value;
-    backgroundcolor = document.getElementById('backgroundcolor').value;
-    width = document.getElementById('width').value;
-    canvas = document.getElementById('paint');
-    ctx = canvas.getContext('2d');
-    pos = $('#paint').offset();
-    trait = [];
-    viderectangle = [];
-    backgroundrectangle = [];
-    videcircle = [];
-    backgroundcircle = [];
-    resize = [];
-    departClique = false;
-    departMove = false;
-    $('#contourcolor').change(function () {
-        contourcolor = $('#contourcolor').val();
-    });
-    $('#backgroundcolor').change(function () {
-        backgroundcolor = $('#backgroundcolor').val();
-    });
-    $('#shadowcolor').change(function () {
-        shadowcolor = $('#shadowcolor').val();
-    });
-    $('#width').change(function () {
-        width = $('#width').val();
-        $('#valuewidth').html(width);
-    });
-    $('#shadow').change(function () {
-        shadow = $('#shadow').val();
-        $('#valueShadow').html(shadow);
-    });
-    $('#font').change(function () {
-        font = $('#font').val();
-    });
-    $('#textSize').change(function () {
-        sizeText = $('#textSize').val() + "px";
-        $('#valueText').html(sizeText);
-    });
-    $('#ajouter').click(function () {
-        type = 'image';
-        image = $('#picturePaint').val();
-        picture = new Image($('#widthpicture').val(), $('#heightpicture').val());
-        picture.src = image;
-        $('#picture').html(picture);
-    });
-    $('#textValidator').click(function () {
-        type = 'text';
-    });
-    $('#trait').click(function () {
-        type = 'trait';
-    });
-    $('#viderectangle').click(function () {
-        type = 'viderectangle';
-    });
-    $('#backgroundrectangle').click(function () {
-        type = 'backgroundrectangle';
-    });
-    $('#videcircle').click(function () {
-        type = 'videcircle';
-    });
-    $('#backgroundcircle').click(function () {
-        type = 'backgroundcircle';
-    });
-    $('#pencil').click(function () {
-        type = 'pencil';
-    });
-    $('#rubber').click(function () {
-        type = 'rubber';
-    });
-    $('#resize').click(function () {
-        type = 'resize';
-    });
-    $('#reset').click(function () {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-    });
-    $('#save').click(function () {
-        url = canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream");
-        window.location.href = url;
-    });
-    $('#paint').on("mousedown", function () {
-        if (type === 'pencil' || type === 'rubber') {
-            departClique = true;
-        }
-    });
-    $('#paint').on("mouseup", function () {
-        if (type === 'pencil' || type === 'rubber') {
-            departClique = false;
-            departMove = false;
-        }
-    });
-    $('#paint').click(function (e) {
-        if (type === 'trait') {
+    function drawPencil (e) {
+         if (type === 'trait') {
             trait.push(e.pageX - pos.left, e.pageY - pos.top);
             ctx.beginPath();
             ctx.shadowBlur = shadow;
@@ -195,8 +104,10 @@ $(function () {
             ctx.fill();
             ctx.fillText($('#text').val(), e.pageX - pos.left, e.pageY - pos.top);
         }
-    });
-    $('#paint').on("mousemove", function (e) {
+
+    }
+
+    function drawMove(e) {
         if (type === 'pencil' || type === 'rubber') {
             if (departClique === true) {
                 if (departMove === false) {
@@ -214,12 +125,18 @@ $(function () {
                     if (type === 'rubber') {
                         ctx.shadowBlur = 0;
                         ctx.shadowColor = shadowcolor;
-                        ctx.strokeStyle = '#ffffff';
+                        ctx.globalCompositeOperation = 'destination-out';
                         ctx.lineWidth = width;
                     }
                     ctx.stroke();
+                    ctx.globalCompositeOperation = 'source-over';
                 }
             }
         }
+    }
+    $('#paint').click(function (e) {
+       drawPencil(e);
     });
-});
+    $('#paint').on("mousemove", function (e) {
+        drawMove(e);
+    });
