@@ -90,9 +90,7 @@
         }
         if (type === 'image') {
             ctx.beginPath();
-            ctx.shadowBlur = shadow;
-            ctx.shadowColor = shadowcolor;
-            ctx.drawImage(document.getElementById('picture').children[0], e.pageX - pos.left, e.pageY - pos.top, $('#widthpicture').val(), $('#heightpicture').val());
+            ctx.drawImage(document.getElementById('picture').children[0], e.pageX - pos.left, e.pageY - pos.top, document.getElementById('widthpicture').value, document.getElementById('heightpicture').value);
         }
         if (type === 'text') {
             styleText = sizeText + " " + font;
@@ -102,9 +100,8 @@
             ctx.fillStyle = backgroundcolor;
             ctx.strokeStyle = contourcolor;
             ctx.fill();
-            ctx.fillText($('#text').val(), e.pageX - pos.left, e.pageY - pos.top);
+            ctx.fillText(document.getElementById('text').value, e.pageX - pos.left, e.pageY - pos.top);
         }
-
     }
 
     function drawMove(e) {
@@ -134,9 +131,9 @@
             }
         }
     }
-    $('#paint').click(function (e) {
+    document.getElementById('paint').onclick = function (e) {
        drawPencil(e);
-    });
-    $('#paint').on("mousemove", function (e) {
-        drawMove(e);
-    });
+    }
+     document.getElementById('paint').onmousemove = function (e) {
+       drawMove(e);
+    }

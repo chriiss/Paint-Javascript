@@ -16,83 +16,83 @@
     var contourcolor = '#000000';
     var backgroundcolor = '#000000';
     var shadowcolor = '#000000';
-
-    $('#contourcolor').change(function () {
-        contourcolor = $('#contourcolor').val();
-    });
-    $('#backgroundcolor').change(function () {
-        backgroundcolor = $('#backgroundcolor').val();
-    });
-    $('#shadowcolor').change(function () {
-        shadowcolor = $('#shadowcolor').val();
-    });
-    $('#width').change(function () {
-        width = $('#width').val();
-        $('#valuewidth').html(width);
-    });
-    $('#shadow').change(function () {
-        shadow = $('#shadow').val();
-        $('#valueShadow').html(shadow);
-    });
-    $('#font').change(function () {
-        font = $('#font').val();
-    });
-    $('#textSize').change(function () {
-        sizeText = $('#textSize').val() + "px";
-        $('#valueText').html(sizeText);
-    });
-    $('#ajouter').click(function () {
+    function ajoutPictures() {
         type = 'image';
-        image = $('#picturePaint').val();
-        picture = new Image($('#widthpicture').val(), $('#heightpicture').val());
-        picture.src = image;
+        results = document.getElementById('picturePaint').value;
+        picture = new Image(document.getElementById('widthpicture').value, document.getElementById('heightpicture').value);
+        picture.src = results;
         $('#picture').html(picture);
-    });
-    $('#textValidator').click(function () {
-        type = 'text';
-    });
-    $('#trait').click(function () {
-        type = 'trait';
-    });
-    $('#viderectangle').click(function () {
-        type = 'viderectangle';
-    });
-    $('#backgroundrectangle').click(function () {
-        type = 'backgroundrectangle';
-    });
-    $('#videcircle').click(function () {
-        type = 'videcircle';
-    });
-    $('#backgroundcircle').click(function () {
-        type = 'backgroundcircle';
-    });
-    $('#pencil').click(function () {
-        type = 'pencil';
-    });
-    $('#rubber').click(function () {
-        type = 'rubber';
-    });
-    $('#resize').click(function () {
-        type = 'resize';
-    });
-    $('#reset').click(function () {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-    });
+    }
     function downloadCanvas(link, canvasId, filename) {
         link.href = document.getElementById(canvasId).toDataURL();
         link.download = filename;
     }
-    $('#save').click(function () {
-      downloadCanvas(this, 'paint', 'test.png');
-    });
-    $('#paint').on("mousedown", function () {
+
+    document.getElementById('contourcolor').onchange = function() {
+        contourcolor = document.getElementById('contourcolor').value;
+    }
+    document.getElementById('backgroundcolor').onchange = function() {
+        backgroundcolor = document.getElementById('backgroundcolor').value;
+    }
+    document.getElementById('shadowcolor').onchange = function() {
+        shadowcolor = document.getElementById('shadowcolor').value;
+    }
+    document.getElementById('width').onchange = function() {
+        width = document.getElementById('width').value;
+        document.getElementById('valuewidth').innerHTML = width;
+    }
+    document.getElementById('shadow').onchange = function () {
+        shadow = document.getElementById('shadow').value;
+        document.getElementById('valueShadow').innerHTML = shadow;
+    };
+    document.getElementById('font').onchange = function () {
+        font = document.getElementById('font').value;
+    }
+    document.getElementById('textSize').onchange = function () {
+        sizeText = document.getElementById('textSize').value + "px";
+        document.getElementById('valueText').innerHTML = sizeText;
+    }
+    document.getElementById('ajouter').onclick = function () {
+       ajoutPictures();
+    }
+    document.getElementById('textValidator').onclick = function () {
+        type = 'text';
+    }
+    document.getElementById('trait').onclick = function () {
+        type = 'trait';
+    }
+    document.getElementById('viderectangle').onclick = function () {
+        type = 'viderectangle';
+    }
+    document.getElementById('backgroundrectangle').onclick = function () {
+        type = 'backgroundrectangle';
+    }
+    document.getElementById('videcircle').onclick = function () {
+        type = 'videcircle';
+    }
+    document.getElementById('backgroundcircle').onclick = function () {
+        type = 'backgroundcircle';
+    }
+    document.getElementById('pencil').onclick = function () {
+        type = 'pencil';
+    }
+    document.getElementById('rubber').onclick = function () {
+        type = 'rubber';
+    }
+    document.getElementById('reset').onclick = function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    document.getElementById('save').onclick = function () {
+      downloadCanvas(this, 'paint', 'painting.png');
+    }
+    document.getElementById('paint').onmousedown = function() {
         if (type === 'pencil' || type === 'rubber') {
             departClique = true;
         }
-    });
-    $('#paint').on("mouseup", function () {
+    }
+    document.getElementById('paint').onmouseup = function() {
         if (type === 'pencil' || type === 'rubber') {
             departClique = false;
             departMove = false;
         }
-    });
+    }
