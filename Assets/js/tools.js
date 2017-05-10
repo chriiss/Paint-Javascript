@@ -12,10 +12,7 @@
     var resize = [];
     var departClique = false;
     var departMove = false;
-
-    var mirrorX = false;
-    var mirrorY = false;
-
+    var type;
     var contourcolor = '#000000';
     var backgroundcolor = '#000000';
     var shadowcolor = '#000000';
@@ -81,9 +78,12 @@
     $('#reset').click(function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
+    function downloadCanvas(link, canvasId, filename) {
+        link.href = document.getElementById(canvasId).toDataURL();
+        link.download = filename;
+    }
     $('#save').click(function () {
-        url = canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream");
-        window.location.href = url;
+      downloadCanvas(this, 'paint', 'test.png');
     });
     $('#paint').on("mousedown", function () {
         if (type === 'pencil' || type === 'rubber') {
