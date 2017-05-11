@@ -88,6 +88,69 @@
         if (backgroundcircle.length >= 3) {
             backgroundcircle = [];
         }
+        if(type === 'backgroundheart') {
+            ctx.beginPath();
+            ctx.shadowBlur = shadow;
+            ctx.shadowColor = shadowcolor;
+            ctx.moveTo(e.pageX - pos.left, e.pageY - pos.top);
+            ctx.bezierCurveTo((e.pageX - pos.left), (e.pageY - pos.top - 10), (e.pageX - pos.left - 10), (e.pageY - pos.top - 20), (e.pageX - pos.left - 23), (e.pageY - pos.top - 20));
+            ctx.bezierCurveTo((e.pageX - pos.left - 60), (e.pageY - pos.top - 20), (e.pageX - pos.left - 60), (e.pageY - pos.top + 23), (e.pageX - pos.left - 60), (e.pageY - pos.top + 23));
+            ctx.bezierCurveTo((e.pageX - pos.left - 60), (e.pageY - pos.top + 40), (e.pageX - pos.left - 35), (e.pageY - pos.top + 65), (e.pageX - pos.left), (e.pageY - pos.top + 80));
+            ctx.bezierCurveTo((e.pageX - pos.left + 35), (e.pageY - pos.top + 65), (e.pageX - pos.left + 60), (e.pageY - pos.top + 40), (e.pageX - pos.left + 60), (e.pageY - pos.top + 23));
+            ctx.bezierCurveTo((e.pageX - pos.left + 60), (e.pageY - pos.top + 23), (e.pageX - pos.left + 60), (e.pageY - pos.top - 20), (e.pageX - pos.left + 23), (e.pageY - pos.top - 20));
+            ctx.bezierCurveTo((e.pageX - pos.left + 10), (e.pageY - pos.top - 20), (e.pageX - pos.left), (e.pageY - pos.top - 3), (e.pageX - pos.left), (e.pageY - pos.top));
+            ctx.fillStyle = backgroundcolor;
+            ctx.strokeStyle = contourcolor;
+            ctx.lineWidth = width;
+            ctx.fill();
+            ctx.stroke();
+        }
+        if(type === 'videheart') {
+            ctx.beginPath();
+            ctx.shadowBlur = shadow;
+            ctx.shadowColor = shadowcolor;
+            ctx.moveTo(e.pageX - pos.left, e.pageY - pos.top);
+            ctx.bezierCurveTo((e.pageX - pos.left), (e.pageY - pos.top - 10), (e.pageX - pos.left - 10), (e.pageY - pos.top - 20), (e.pageX - pos.left - 23), (e.pageY - pos.top - 20));
+            ctx.bezierCurveTo((e.pageX - pos.left - 60), (e.pageY - pos.top - 20), (e.pageX - pos.left - 60), (e.pageY - pos.top + 23), (e.pageX - pos.left - 60), (e.pageY - pos.top + 23));
+            ctx.bezierCurveTo((e.pageX - pos.left - 60), (e.pageY - pos.top + 40), (e.pageX - pos.left - 35), (e.pageY - pos.top + 65), (e.pageX - pos.left), (e.pageY - pos.top + 80));
+            ctx.bezierCurveTo((e.pageX - pos.left + 35), (e.pageY - pos.top + 65), (e.pageX - pos.left + 60), (e.pageY - pos.top + 40), (e.pageX - pos.left + 60), (e.pageY - pos.top + 23));
+            ctx.bezierCurveTo((e.pageX - pos.left + 60), (e.pageY - pos.top + 23), (e.pageX - pos.left + 60), (e.pageY - pos.top - 20), (e.pageX - pos.left + 23), (e.pageY - pos.top - 20));
+            ctx.bezierCurveTo((e.pageX - pos.left + 10), (e.pageY - pos.top - 20), (e.pageX - pos.left), (e.pageY - pos.top - 3), (e.pageX - pos.left), (e.pageY - pos.top));
+            ctx.fillStyle = backgroundcolor;
+            ctx.strokeStyle = contourcolor;
+            ctx.lineWidth = width;
+            ctx.closePath();
+            ctx.stroke();
+        }
+        if(type === 'backgroundcaret') {
+            ctx.beginPath();
+            ctx.shadowBlur = shadow;
+            ctx.shadowColor = shadowcolor;
+            ctx.moveTo(e.pageX - pos.left, e.pageY - pos.top);
+            ctx.moveTo((e.pageX - pos.left - 75), (e.pageY - pos.top - 50));
+            ctx.lineTo((e.pageX - pos.left - 100), (e.pageY - pos.top - 75));
+            ctx.lineTo((e.pageX - pos.left - 100), (e.pageY - pos.top - 25)); 
+            ctx.fillStyle = backgroundcolor;
+            ctx.strokeStyle = contourcolor;
+            ctx.lineWidth = width;
+            ctx.fill();
+            ctx.closePath();
+            ctx.stroke();
+        }
+        if(type === 'videcaret') {
+            ctx.beginPath();
+            ctx.shadowBlur = shadow;
+            ctx.shadowColor = shadowcolor;
+            ctx.moveTo(e.pageX - pos.left, e.pageY - pos.top);
+            ctx.moveTo((e.pageX - pos.left - 75), (e.pageY - pos.top - 50));
+            ctx.lineTo((e.pageX - pos.left - 100), (e.pageY - pos.top - 75));
+            ctx.lineTo((e.pageX - pos.left - 100), (e.pageY - pos.top - 25)); 
+            ctx.fillStyle = backgroundcolor;
+            ctx.strokeStyle = contourcolor;
+            ctx.lineWidth = width;
+            ctx.closePath();
+            ctx.stroke();
+        }
         if (type === 'text') {
             styleText = sizeText + " " + font;
             ctx.font = styleText;

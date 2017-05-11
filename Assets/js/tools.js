@@ -9,7 +9,6 @@
     var backgroundrectangle = [];
     var videcircle = [];
     var backgroundcircle = [];
-    var resize = [];
     var departClique = false;
     var departMove = false;
     var type;
@@ -109,6 +108,18 @@
     }
     document.getElementById('backgroundcircle').onclick = function () {
         type = 'backgroundcircle';
+    }
+    document.getElementById('backgroundheart').onclick = function () {
+        type = 'backgroundheart';
+    }
+    document.getElementById('videheart').onclick = function () {
+        type = 'videheart';
+    }
+    document.getElementById('backgroundcaret').onclick = function () {
+        type = 'backgroundcaret';
+    }
+    document.getElementById('videcaret').onclick = function () {
+        type = 'videcaret';
     }
     document.getElementById('pencil').onclick = function () {
         type = 'pencil';

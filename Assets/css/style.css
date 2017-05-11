@@ -162,4 +162,15 @@ li {
 	color: #8e44ad;
 	transition-duration: 0.5s;
 }
-
+#backgroundheart {
+	font-size: 20px;
+}
+#videheart {
+	font-size: 20px;
+}
+#backgroundcaret{
+	font-size: 25px;
+}
+#videcaret {
+	font-size: 24px;
+}
