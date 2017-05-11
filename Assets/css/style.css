@@ -145,3 +145,21 @@ input:hover {
 	color: #fff;
 	text-align: center;
 }
+li {
+	list-style-type: none;
+}
+#file {
+    display:none;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+#file:hover {
+	margin: 0;
+	padding: 11px 11px 11px 11px;
+	background-color: #fff;
+	color: #8e44ad;
+	transition-duration: 0.5s;
+}
+

@@ -88,10 +88,6 @@
         if (backgroundcircle.length >= 3) {
             backgroundcircle = [];
         }
-        if (type === 'image') {
-            ctx.beginPath();
-            ctx.drawImage(document.getElementById('picture').children[0], e.pageX - pos.left, e.pageY - pos.top, document.getElementById('widthpicture').value, document.getElementById('heightpicture').value);
-        }
         if (type === 'text') {
             styleText = sizeText + " " + font;
             ctx.font = styleText;
