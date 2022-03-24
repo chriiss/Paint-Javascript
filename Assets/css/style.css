@@ -3,10 +3,10 @@ body {
 }
 #title {
 	background-color: none;
-	font-size: 50px;
 	text-align: center;
 	color: #fff;
-	padding-bottom: 10px;
+	padding-bottom: 1rem;
+	margin-top: 4rem;
 }
 .fa-paint-brush {
 	color: #8e44ad;
@@ -133,6 +133,7 @@ input:hover {
   overflow: hidden;
   top: 0;
   left: 0;
+  background-color: grey;
 }
 #video-background {
   position: absolute;
